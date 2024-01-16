@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "423dffa7-9f73-4c30-8ceb-81a34002cf3e",
+		"name": "Snap BI (VA Implement)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5740451"
+	},
+	"item": [
+		{
+			"name": "Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"partnerServiceId\":\"  88899\",\n   \"customerNo\":\"12345678901234567890\",\n   \"virtualAccountNo\":\"  08889912345678901234567890\",\n   \"txnDateInit\":\"20201231T235959Z\",\n   \"channelCode\":6011,\n   \"language\":\"ID\",\n   \"amount\":{\n      \"value\":\"12345678.00\",\n      \"currency\":\"IDR\"\n   },\n   \"hashedSourceAccountNo\":\"abcdefghijklmnopqrstuvwxyz123456\",\n   \"sourceBankCode\":\"008\",\n   \"passApp\":\"abcdefghijklmnopqrstuvwxyz\",\n   \"inquiryRequestId\":\"abcdef-123456-abcdef\",\n   \"additionalInfo\":{\n      \"deviceId\":\"12345679237\",\n      \"channel\":\"mobilephone\"\n   }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/transaction",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/auth",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Response 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/auth",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.3 Python/3.7.17"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Jan 2024 14:08:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "285"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1MzI4OGY5Yi1mZTZkLTQ1YWQtOGNiOS0zMTNmMTA1M2E2YmUiLCJjbGllbnRJZCI6IjA5ODJjOGRiMTQyZjQyYjdhNmRhOWI4YTc0ZjhiZWFkIiwibmJmIjoxNzA1NDE0MTI1LCJleHAiOjE3MDU0MTUwMjUsImlhdCI6MTcwNTQxNDEyNX0.ID61xJ5zO1JncTKEGw0WdnmxXjPUJD9DSWM3FXbPG78\"\n}"
+				}
+			]
+		}
+	]
+}

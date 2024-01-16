@@ -6,3 +6,4 @@ class Config:
     CLIENT_SECRET = os.getenv("CLIENT_SECRET")
     PUBLIC_KEY = os.getenv("PUBLIC_KEY")
     PRIVATE_KEY = os.getenv("PRIVATE_KEY")
+    ACCESS_TOKEN = os.getenv("ACCESS_TOKEN", None)

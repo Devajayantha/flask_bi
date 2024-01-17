@@ -41,19 +41,18 @@ def inquiry_va(signature, payload, method = 'POST'):
 
     header = {
         "Content-Type": "application/json",
-        "Authorization": app.config['ACCESS_TOKEN'],
+        "Authorization": "Bearer " + app.config['ACCESS_TOKEN'],
         "X-TIMESTAMP": get_current_timestamp(),
-        "X-CLIENT-SECRET": app.config['CLIENT_SECRET'],
-        "HttpMethod": method,
         "X-PARTNER-ID": app.config['CLIENT_ID'],
         "X-SIGNATURE": signature,
-        "X-EXTERNAL-ID": "41807553358950093184162180797837", #random
-        "CHANNEL_ID": "41807553358950093184162180797837", #random
+        "X-EXTERNAL-ID": "41807553358950093184162180797837",  # random
+        "CHANNEL-ID": "95221",  # random
     }
 
     response = requests.post(url, data=json.dumps(payload), headers=header)
 
+
     if response.status_code == 200:
-        return response.json()['data']
+        return response.json()
 
     return None
